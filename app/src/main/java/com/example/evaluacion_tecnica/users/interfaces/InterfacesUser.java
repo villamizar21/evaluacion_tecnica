@@ -1,6 +1,6 @@
-package com.example.evaluacion_tecnica.interfaces;
+package com.example.evaluacion_tecnica.users.interfaces;
 
-import com.example.evaluacion_tecnica.model.Users;
+import com.example.evaluacion_tecnica.users.model.Users;
 
 import java.util.List;
 

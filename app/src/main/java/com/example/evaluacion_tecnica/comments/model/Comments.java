@@ -1,4 +1,4 @@
-package com.example.evaluacion_tecnica.model;
+package com.example.evaluacion_tecnica.comments.model;
 
 public class Comments {
 

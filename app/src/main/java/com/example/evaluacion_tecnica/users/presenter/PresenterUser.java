@@ -1,8 +1,8 @@
-package com.example.evaluacion_tecnica.presenter;
+package com.example.evaluacion_tecnica.users.presenter;
 
-import com.example.evaluacion_tecnica.interfaces.InterfacesUser;
-import com.example.evaluacion_tecnica.iterator.IteratorUser;
-import com.example.evaluacion_tecnica.model.Users;
+import com.example.evaluacion_tecnica.users.interfaces.InterfacesUser;
+import com.example.evaluacion_tecnica.users.iterator.IteratorUser;
+import com.example.evaluacion_tecnica.users.model.Users;
 
 import java.util.List;
 

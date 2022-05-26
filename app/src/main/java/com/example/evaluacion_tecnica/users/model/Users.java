@@ -1,4 +1,4 @@
-package com.example.evaluacion_tecnica.model;
+package com.example.evaluacion_tecnica.users.model;
 
 public class Users {
     private int userId;
