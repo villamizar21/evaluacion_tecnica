@@ -6,6 +6,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".comments.view.CommentsFragment">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField_buscar"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/buscar"
+        android:background="@color/gris_azulado"
+        android:textColorHint="#8F8E8E"
+        app:hintTextColor="@color/black"
+        android:imeOptions="actionDone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_search">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/buscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bordear_edittext"
+            android:imeOptions="actionDone"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="0dp"
@@ -14,7 +38,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textField_buscar"
         tools:listitem="@layout/item_comments" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

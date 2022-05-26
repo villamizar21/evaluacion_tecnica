@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +19,10 @@ import com.example.evaluacion_tecnica.comments.adapter.AdapterComment;
 import com.example.evaluacion_tecnica.comments.interfaces.InterfaceComments;
 import com.example.evaluacion_tecnica.comments.presenter.PresenterComment;
 import com.example.evaluacion_tecnica.comments.model.Comments;
+import com.example.evaluacion_tecnica.users.model.Users;
+import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -27,6 +32,7 @@ public class CommentsFragment extends Fragment implements InterfaceComments.view
     ProgressDialog dialog;
     RecyclerView recycler;
     AdapterComment adapter;
+    TextInputEditText buscar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,6 +45,7 @@ public class CommentsFragment extends Fragment implements InterfaceComments.view
 
     private void mapearElementos(View view) {
         recycler = view.findViewById(R.id.recycler);
+        buscar = view.findViewById(R.id.buscar);
         presenter = new PresenterComment(this);
         Bundle bundle = getArguments();
         if (bundle != null) {
@@ -56,6 +63,7 @@ public class CommentsFragment extends Fragment implements InterfaceComments.view
         recycler.setHasFixedSize(true);
         adapter = new AdapterComment(comments);
         recycler.setAdapter(adapter);
+        buscar(comments);
     }
 
     private void dialog(Context context) {
@@ -63,5 +71,33 @@ public class CommentsFragment extends Fragment implements InterfaceComments.view
         dialog.setMessage("Obteniendo Comentarios...");
         dialog.setCancelable(false);
         dialog.show();
+    }
+    private void buscar(List<Comments> comments) {
+        buscar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filtrar(s.toString(), comments);
+            }
+        });
+    }
+
+    private void filtrar(String s, List<Comments> comments) {
+        ArrayList<Comments> filtrar = new ArrayList<>();
+        for (Comments u : comments) {
+            if (u.getBody().toLowerCase().contains(s.toLowerCase())) {
+                filtrar.add(u);
+            }
+        }
+        adapter.filtar(filtrar);
     }
 }

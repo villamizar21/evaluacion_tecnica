@@ -11,8 +11,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:background="@color/gris_azulado"
         android:hint="@string/buscar"
+        android:textColorHint="#8F8E8E"
+        app:hintTextColor="@color/black"
         android:imeOptions="actionDone"
         app:layout_constraintTop_toTopOf="parent"
         app:startIconDrawable="@drawable/ic_search">
@@ -21,6 +23,8 @@
             android:id="@+id/buscar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bordear_edittext"
             android:imeOptions="actionDone"
             android:singleLine="true" />
 
@@ -28,7 +32,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

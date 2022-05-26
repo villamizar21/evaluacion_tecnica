@@ -54,7 +54,7 @@ public class PhotosFragment extends Fragment implements InterfacePhoto.view {
     @Override
     public void responsePhoto(List<PhotosModel> photos) {
         dialog.dismiss();
-        recycler.setLayoutManager(new GridLayoutManager(getContext(), 1));
+        recycler.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recycler.setHasFixedSize(true);
         adapter = new AdapterPhotos(photos, getContext());
         recycler.setAdapter(adapter);

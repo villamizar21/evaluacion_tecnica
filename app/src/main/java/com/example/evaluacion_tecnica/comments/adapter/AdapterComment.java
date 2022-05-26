@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.evaluacion_tecnica.R;
 import com.example.evaluacion_tecnica.comments.model.Comments;
+import com.example.evaluacion_tecnica.users.model.Users;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHolderAdapterComment> {
@@ -48,5 +50,9 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
             body = itemView.findViewById(R.id.body);
 
         }
+    }
+    public void filtar(ArrayList<Comments> filtrar){
+        this.comments = filtrar;
+        notifyDataSetChanged();
     }
 }
