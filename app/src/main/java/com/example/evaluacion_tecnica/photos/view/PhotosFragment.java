@@ -14,13 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.evaluacion_tecnica.R;
-import com.example.evaluacion_tecnica.comments.adapter.AdapterComment;
-import com.example.evaluacion_tecnica.comments.presenter.PresenterComment;
 import com.example.evaluacion_tecnica.photos.adapter.AdapterPhotos;
 import com.example.evaluacion_tecnica.photos.interfaces.InterfacePhoto;
 import com.example.evaluacion_tecnica.photos.model.PhotosModel;
 import com.example.evaluacion_tecnica.photos.presenter.PresenterPhoto;
-import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.List;
 

@@ -14,9 +14,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
 import com.example.evaluacion_tecnica.R;
 import com.example.evaluacion_tecnica.photos.model.PhotosModel;
-import com.example.evaluacion_tecnica.utils.Global;
-import com.facebook.shimmer.ShimmerFrameLayout;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 

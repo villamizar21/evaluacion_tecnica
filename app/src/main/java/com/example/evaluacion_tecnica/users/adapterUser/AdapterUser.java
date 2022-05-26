@@ -86,4 +86,8 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.ViewHolderAdap
             comment = itemView.findViewById(R.id.comments);
         }
     }
+    public void filtar(List<Users> users){
+        this.users = users;
+        notifyDataSetChanged();
+    }
 }
