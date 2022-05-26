@@ -2,6 +2,7 @@ package com.example.evaluacion_tecnica.remote;
 
 import com.example.evaluacion_tecnica.comments.model.Comments;
 import com.example.evaluacion_tecnica.users.model.Users;
+import com.example.evaluacion_tecnica.photos.model.PhotosModel;
 
 import java.util.ArrayList;
 
@@ -18,4 +19,7 @@ public interface ApiService {
 
     @GET("/posts/{id}/comments")
     Call<ArrayList<Comments>> getComments(@Path("id") int id);
+
+    @GET("/posts/{id}/photos")
+    Call<ArrayList<PhotosModel>> getPhotos(@Path("id") int id);
 }

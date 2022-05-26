@@ -34,8 +34,8 @@ public class UsersFragment extends Fragment implements InterfacesUser.view {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_users, container, false);
         presenter = new PresenterUser(this);
-        recycler = view.findViewById(R.id.recycler);
         dialog(getContext());
+        recycler = view.findViewById(R.id.recycler);
         presenter.getDatos();
         return view;
     }

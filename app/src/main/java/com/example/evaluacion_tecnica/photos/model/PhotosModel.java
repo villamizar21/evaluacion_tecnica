@@ -1,6 +1,6 @@
-package com.example.evaluacion_tecnica.model;
+package com.example.evaluacion_tecnica.photos.model;
 
-public class Photos {
+public class PhotosModel {
 
     int albumId;
     int id;

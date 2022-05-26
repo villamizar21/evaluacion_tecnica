@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.evaluacion_tecnica.R;
 import com.example.evaluacion_tecnica.comments.view.CommentsFragment;
+import com.example.evaluacion_tecnica.photos.view.PhotosFragment;
 import com.example.evaluacion_tecnica.users.model.Users;
 
 import java.util.List;
@@ -39,6 +40,7 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.ViewHolderAdap
     public void onBindViewHolder(@NonNull ViewHolderAdapterUser holder, int position) {
         holder.title.setText(users.get(position).getTitle());
         holder.body.setText(users.get(position).getBody());
+
         holder.comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,6 +49,18 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.ViewHolderAdap
                 datos.putInt("id", users.get(position).getId());
                 datos.putInt("userId", users.get(position).getUserId());
                 Fragment fragment = new CommentsFragment();
+                fragment.setArguments(datos);
+                com.getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, fragment).addToBackStack(null).commit();
+            }
+        });
+
+        holder.photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle datos = new Bundle();
+                datos.putInt("id", users.get(position).getId());
+                datos.putInt("userId", users.get(position).getUserId());
+                Fragment fragment = new PhotosFragment();
                 fragment.setArguments(datos);
                 com.getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, fragment).addToBackStack(null).commit();
             }
