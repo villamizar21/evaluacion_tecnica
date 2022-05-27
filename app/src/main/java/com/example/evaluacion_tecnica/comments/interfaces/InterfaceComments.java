@@ -8,11 +8,12 @@ public interface InterfaceComments {
 
     interface view {
         void responseComment(List<Comments> comments);
+        void respuestaErronea(String message);
     }
 
     interface presenter {
         void responseComment(List<Comments> comments);
-
+        void respuestaErronea(String message);
         void getComments(int id);
     }
 

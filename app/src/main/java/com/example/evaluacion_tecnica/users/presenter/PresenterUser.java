@@ -22,6 +22,11 @@ public class PresenterUser implements InterfacesUser.presenter {
     }
 
     @Override
+    public void respuestaErronea(String message) {
+        view.respuestaErronea(message);
+    }
+
+    @Override
     public void respuesta(List<Users> users) {
         view.respuesta(users);
     }

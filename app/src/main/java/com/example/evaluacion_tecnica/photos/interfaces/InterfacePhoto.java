@@ -8,10 +8,14 @@ public interface InterfacePhoto {
 
     interface view {
         void responsePhoto(List<PhotosModel> photos);
+
+        void respuestaErronea(String message);
     }
 
     interface presenter {
         void responsePhoto(List<PhotosModel> photos);
+
+        void respuestaErronea(String message);
 
         void getPhotos(int id);
     }

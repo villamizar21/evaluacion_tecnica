@@ -22,6 +22,11 @@ public class PresenterComment implements InterfaceComments.presenter {
     }
 
     @Override
+    public void respuestaErronea(String message) {
+        view.respuestaErronea(message);
+    }
+
+    @Override
     public void getComments(int id) {
     iterator.getComments(id);
     }

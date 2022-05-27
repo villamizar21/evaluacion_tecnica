@@ -23,6 +23,11 @@ public class PresenterPhoto implements InterfacePhoto.presenter {
     }
 
     @Override
+    public void respuestaErronea(String message) {
+        view.respuestaErronea(message);
+    }
+
+    @Override
     public void getPhotos(int id) {
         iterator.getPhotos(id);
     }

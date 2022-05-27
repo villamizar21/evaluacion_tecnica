@@ -19,6 +19,7 @@ import com.example.evaluacion_tecnica.users.adapterUser.AdapterUser;
 import com.example.evaluacion_tecnica.users.interfaces.InterfacesUser;
 import com.example.evaluacion_tecnica.users.model.Users;
 import com.example.evaluacion_tecnica.users.presenter.PresenterUser;
+import com.example.evaluacion_tecnica.utils.dialogoError.DialogoError;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
@@ -58,6 +59,12 @@ public class UsersFragment extends Fragment implements InterfacesUser.view {
         recycler.setLayoutManager(new GridLayoutManager(getContext(), 1));
         recycler.setAdapter(adapterUser);
         buscar(users);
+    }
+
+    @Override
+    public void respuestaErronea(String message) {
+        DialogoError dialog = new DialogoError(message);
+        dialog.show(getActivity().getSupportFragmentManager(), "DialogoError");
     }
 
     private void dialog(Context context) {

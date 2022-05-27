@@ -43,6 +43,7 @@ public class IteratorComment implements InterfaceComments.iterator {
             @Override
             public void onFailure(Call<ArrayList<Comments>> call, Throwable t) {
                 Log.e("","error " + t.getMessage());
+                presenter.respuestaErronea(t.getMessage());
             }
         });
 

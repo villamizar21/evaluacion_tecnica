@@ -8,11 +8,12 @@ public interface InterfacesUser {
 
     interface view {
         void respuesta(List<Users> users);
+        void respuestaErronea(String message);
     }
 
     interface presenter {
         void getDatos();
-
+        void respuestaErronea(String message);
         void respuesta(List<Users> users);
     }
 

@@ -43,6 +43,7 @@ public class IteratorPhoto implements InterfacePhoto.iterator {
             @Override
             public void onFailure(Call<ArrayList<PhotosModel>> call, Throwable t) {
                 Log.e("","error "+ t.getMessage());
+                presenter.respuestaErronea(t.getMessage());
             }
         });
     }

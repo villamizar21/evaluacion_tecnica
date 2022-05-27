@@ -1,5 +1,6 @@
 package com.example.evaluacion_tecnica.comments.view;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import com.example.evaluacion_tecnica.comments.interfaces.InterfaceComments;
 import com.example.evaluacion_tecnica.comments.presenter.PresenterComment;
 import com.example.evaluacion_tecnica.comments.model.Comments;
 import com.example.evaluacion_tecnica.users.model.Users;
+import com.example.evaluacion_tecnica.utils.dialogoError.DialogoError;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
@@ -64,6 +66,12 @@ public class CommentsFragment extends Fragment implements InterfaceComments.view
         adapter = new AdapterComment(comments);
         recycler.setAdapter(adapter);
         buscar(comments);
+    }
+
+    @Override
+    public void respuestaErronea(String message) {
+        DialogoError dialog = new DialogoError(message);
+        dialog.show(getActivity().getSupportFragmentManager(), "DialogoError");
     }
 
     private void dialog(Context context) {

@@ -45,6 +45,7 @@ public class IteratorUser implements InterfacesUser.iterator {
             @Override
             public void onFailure(Call<ArrayList<Users>> call, Throwable t) {
                 Log.e("", "error " + t.getMessage());
+                presenter.respuestaErronea(t.getMessage());
             }
         });
 

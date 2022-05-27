@@ -18,6 +18,7 @@ import com.example.evaluacion_tecnica.photos.adapter.AdapterPhotos;
 import com.example.evaluacion_tecnica.photos.interfaces.InterfacePhoto;
 import com.example.evaluacion_tecnica.photos.model.PhotosModel;
 import com.example.evaluacion_tecnica.photos.presenter.PresenterPhoto;
+import com.example.evaluacion_tecnica.utils.dialogoError.DialogoError;
 
 import java.util.List;
 
@@ -58,6 +59,12 @@ public class PhotosFragment extends Fragment implements InterfacePhoto.view {
         recycler.setHasFixedSize(true);
         adapter = new AdapterPhotos(photos, getContext());
         recycler.setAdapter(adapter);
+    }
+
+    @Override
+    public void respuestaErronea(String message) {
+        DialogoError dialog = new DialogoError(message);
+        dialog.show(getActivity().getSupportFragmentManager(), "DialogoError");
     }
 
     private void dialog(Context context) {
